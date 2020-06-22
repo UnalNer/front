@@ -1,0 +1,30 @@
+.sidebar {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .bottom {
+    bottom: 1em;
+    width: 100%;
+    color: gray;
+  }
+
+  textarea {
+    width: 100%;
+    height: 200px;
+    padding: 1em;
+    border-radius: 0.2em;
+    font-family: 'PT Sans', sans-serif;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+.sidebar > center {
+  padding-left: 2em;
+  padding-right: 2em;
+}

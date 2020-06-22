@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Sidebar from './components/Sidebar/Sidebar';
+import Dashboard from './components/Dashboard/Dashboard';
+
 import './App.css';
 
 function App() {
+  const [text, setText] = useState('')
+  const [response, setResponse] = useState(null)
+
+  const { REACT_APP_BACKEND_URL } = process.env
+
+  const onSubmit = () => {
+    fetch(REACT_APP_BACKEND_URL)
+    .then(res => res.json())
+    .then(res => setResponse(res))
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="layout">
+      <Sidebar 
+        textControl={[text, setText]}
+        onSubmit={onSubmit} />
+      <Dashboard />
     </div>
   );
 }
