@@ -1,0 +1,11 @@
+.tag {
+  background-color: red;
+  padding: 0.2em 0.4em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+.tag:hover {
+  background-color: darken(red, 7);
+}

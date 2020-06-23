@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
-import Sidebar from './components/Sidebar/Sidebar';
-import Dashboard from './components/Dashboard/Dashboard';
+import Sidebar from './layouts/Sidebar/Sidebar';
+import Dashboard from './layouts/Dashboard/Dashboard';
 
 import './App.css';
 
 function App() {
   const [text, setText] = useState('')
-  const [response, setResponse] = useState(null)
+  const [entities, setEntities] = useState(null)
 
-  const { REACT_APP_BACKEND_URL } = process.env
+  const { REACT_APP_BACKEND_URL,
+    REACT_APP_NER_ENDPOINT } = process.env
 
-  const onSubmit = () => {
-    fetch(REACT_APP_BACKEND_URL)
+  const onSubmit = () => {    
+    fetch(REACT_APP_BACKEND_URL + REACT_APP_NER_ENDPOINT)
     .then(res => res.json())
-    .then(res => setResponse(res))
-  }
+    .then(res => setEntities(res))
+  }  
 
   return (
     <div className="layout">
       <Sidebar 
         textControl={[text, setText]}
         onSubmit={onSubmit} />
-      <Dashboard />
+      <Dashboard entities={entities}/>
     </div>
   );
 }

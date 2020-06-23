@@ -1,0 +1,17 @@
+#dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .active {
+    width: 80%;
+    height: 80%;
+    // background-color: red;
+  }
+
+  .idle {
+    color: gray;
+  }
+}

@@ -14,7 +14,7 @@ export default function Sidebar(props) {
         </h1>
         <small>Developed by José David Nieto, Juan Carlos Gama, and Viviana Sofía Murillo.</small> <br />
         <br />
-        <p>Paste below the content of the news you want to check.</p>
+        <p>That COVID-19 article that you found on Twitter seems a bit sketchy. Want to verify? Paste below the news' content so we can check.</p>
         <textarea 
           id="news-input"
           placeholder="Place your text here..."
