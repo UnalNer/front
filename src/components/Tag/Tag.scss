@@ -1,5 +1,5 @@
 .tag {
-  background-color: red;
+  background-color: var(--gold);
   padding: 0.2em 0.4em;
   margin-left: 0.5em;
   margin-right: 0.5em;
@@ -7,5 +7,5 @@
 }
 
 .tag:hover {
-  background-color: darken(red, 7);
+  background-color: darken(yellow, 7);
 }
