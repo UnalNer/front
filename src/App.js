@@ -36,7 +36,8 @@ function App() {
       })
         .then(res => res.json())
         .then(res => setPrediction(res))
-    )]).then(() => setLoading(false))
+    )])
+    .finally(() => setLoading(false))
   }, [text])
 
   return (
