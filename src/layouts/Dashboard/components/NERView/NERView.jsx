@@ -1,12 +1,13 @@
 import React from 'react'
 import Tag from '../../../../components/Tag/Tag'
 
-export default function NERView(props) {
-  const { entities } = props
+export default function NERView({ entities }) {
   return (
+    <>
+    <h3>Recognized entities</h3>
     <div className="ner">
-      <h3>Recognized entities</h3>
-      {entities.map((e, idx) => <Tag key={`NER-Tag-${idx}`} text={e.text} />)}
+      {entities.map((e, idx) => <Tag key={`NER-Tag-${idx}`} text={e.text} type={e.type}/>)}
     </div>
+    </>
   )
 }

@@ -8,7 +8,7 @@ import './Dashboard.scss'
 // export default function Dashboard(props) {
 //   const { entities } = props
 //   console.log(entities);
-  
+
 //   return (
 //     <div id="dashboard">
 //       {entities
@@ -24,19 +24,24 @@ import './Dashboard.scss'
 // }
 
 export default function Dashboard(props) {
-  const { entities, prediction } = props
-  
+  const { entities, prediction, loading } = props
+  if (loading)
+    return (
+      <div id="dashboard">
+        <h3>Cargando...</h3>
+      </div>
+    )
   return (
     <div id="dashboard">
       {!entities && !prediction
-      ? <div className="idle">
-        <p>Send us a COVID-19 related text so we can verify its veracity.</p>
-      </div>
-      : <div className="active">
-        { prediction ? <PredictionView prediction={prediction} /> : '' }
-        <br/>
-        { entities ? <NERView entities={entities} /> : '' }
-      </div>}
+        ? <div className="idle">
+          <p>Send us a COVID-19 related text so we can verify its veracity.</p>
+        </div>
+        : <div className="active">
+          {prediction ? <PredictionView prediction={prediction} /> : ''}
+          <br />
+          {entities ? <NERView entities={entities} /> : ''}
+        </div>}
     </div>
   )
 }

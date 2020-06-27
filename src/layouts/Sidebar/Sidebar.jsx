@@ -2,11 +2,7 @@ import React from 'react'
 
 import './Sidebar.scss'
 
-export default function Sidebar(props) {
-  const { onSubmit } = props
-  const [text, setText] = props.textControl
-  
-  return (
+export default ({onSubmit, text, setText}) => (
     <div className="sidebar">
       <center>
         <h1>
@@ -31,5 +27,4 @@ export default function Sidebar(props) {
         </center>
       </center>
     </div>
-  )
-}
+)

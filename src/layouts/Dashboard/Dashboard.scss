@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 50%;
 
   .active {
     width: 80%;
@@ -13,5 +13,14 @@
 
   .idle {
     color: gray;
+  }
+
+  .ner {
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+      margin: 0.25rem 0.2rem;
+    }
   }
 }
